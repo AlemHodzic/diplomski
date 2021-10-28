@@ -1,0 +1,42 @@
+<div class="student-container">
+    <div class="container">
+      <a class="button3" (click)="openDialog()">Dodaj profesora</a>
+      <div class="card shadow my-5">
+        <h4 class="card-header">Profesori</h4>
+      
+        <div class="card-body">
+          <table class="table table-striped table-bordered table-hover table-responsive">
+            <thead>
+              <tr>
+                <th>UID</th>
+                <th>Ime</th>
+                <th>Prezime</th>
+                <th>JMBG</th>
+                <th>E-mail</th>
+                <th data-sortable="false">Opcije</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let profesor of profesori">
+                <td>{{profesor.korisnik_id}}</td>
+                <td>{{profesor.ime}}</td>
+                <td>{{profesor.prezime}}</td>
+                <td>{{profesor.JMBG}}</td>
+                <td>{{profesor.email}}</td>
+                <td>
+                  <div class="btn-group btn-group-sm" role="group">
+                    
+                    <button (click)="openEdit(profesor.korisnik_id)" type="button" class="btn btn-outline-dark"><i class="fas fa-pen"></i></button>
+                    <button (click)="delete(profesor)" type="button" class="btn btn-outline-dark"><i class="fas fa-trash"></i></button>
+                  </div>
+                </td>
+              </tr>
+            
+            </tbody>
+          </table>
+        </div>
+        <div class="card-footer"></div>
+      </div>
+    </div>
+  </div>
+  

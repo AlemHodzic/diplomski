@@ -1,0 +1,37 @@
+<div class="container">  
+    <form id="contact" [formGroup] = "formdata" (ngSubmit)="onClickSubmit(formdata.value)">
+      <h3>Predmet forma</h3>
+      <h4>Unesite informacije o predmetu</h4>
+      <fieldset>
+        <input formControlName="naziv" name="imeStudenta" placeholder="Naziv" type="text" tabindex="1" required autofocus>
+      </fieldset>
+      <fieldset>
+        <input  formControlName="opis"  name="prezimeStudenta" placeholder="Opis" type="text" tabindex="2" required>
+      </fieldset>
+      <fieldset>
+        <input  formControlName="ECTS"  name="prezimeStudenta" placeholder="ECTS bodovi" type="number" tabindex="2" required>
+      </fieldset>
+      <fieldset>
+        <label for="profesors">Predavač:</label>
+        <select class="selectForm" name="profesors" id="profesors" formControlName="profesor_id" >
+          <option *ngFor="let prof of profesori"  value={{prof.profesor_id}}>{{prof.ime}} {{prof.prezime}}</option>
+        </select>
+      </fieldset>
+      <fieldset>
+        <label for="odsjek">Odsjek:</label>
+        <select class="selectForm" name="odsjek" id="odsjek" formControlName="odsjek_id" >
+          <option  *ngFor="let odsjek of odsjeci"  value={{odsjek.odsjek_id}}>{{odsjek.naziv}}</option>
+        </select>
+      </fieldset>
+      <fieldset>
+        <label for="godine">Kojoj godini studija predmet pripada:</label>
+        <select class="selectForm" name="godine" id="godine" formControlName="godina_studija" >
+          <option *ngFor="let godina of godine"  value={{godina.godina_studija}}>{{godina.godina_studija}}</option>
+        </select>
+      </fieldset>
+  
+      <fieldset>
+        <button name="submit" type="submit" id="contact-submit" data-submit="...Sending">Dodaj</button>
+      </fieldset>
+    </form>
+  </div>

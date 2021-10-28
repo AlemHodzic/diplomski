@@ -1,0 +1,33 @@
+@import 'https://cdnjs.cloudflare.com/ajax/libs/bootswatch/4.6.0/yeti/bootstrap.min.css';
+@import 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css';
+
+.table-sortable th:not([data-sortable="false"]) {
+  cursor: pointer;
+}
+
+.table-sortable th:not([data-sortable="false"])::after {
+  content: " " attr(data-sort-direction);
+  font-weight: normal;
+}
+
+
+.table-sortable th[data-sortable="false"] {
+  background-color: lightcoral;
+}
+a.button3{
+    width: 200px;
+    display: block;
+    padding:0.3em 1.2em;
+    margin:0 0.3em 0.3em 0;
+    border-radius:2em;
+    box-sizing: border-box;
+    text-decoration:none;
+    font-weight:300;
+    color:#FFFFFF;
+    background-color:#4eb5f1;
+    text-align:center;
+    transition: all 0.2s;
+    }
+    a.button3:hover{
+    background-color:#4095c6;
+    }

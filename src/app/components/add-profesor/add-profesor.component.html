@@ -1,0 +1,24 @@
+<div class="container">  
+    <form id="contact" [formGroup] = "formdata" (ngSubmit)="onClickSubmit(formdata.value)">
+      <h3>Profesor forma</h3>
+      <h4>Unesite podatke predavača</h4>
+      <fieldset>
+        <input formControlName="ime" name="imeStudenta" placeholder="Ime" type="text" tabindex="1" required autofocus>
+      </fieldset>
+      <fieldset>
+        <input  formControlName="prezime"  name="prezimeStudenta" placeholder="Prezime" type="text" tabindex="2" required>
+      </fieldset>
+      <fieldset>
+        <input  formControlName="email"  name="mail" placeholder="E-mail" type="email" tabindex="3" required>
+      </fieldset>
+      <fieldset>
+        <input  formControlName="JMBG"  name="jmbg" placeholder="JMBG" type="number" tabindex="4" required>
+      </fieldset>
+      <fieldset>
+        <input  formControlName="sifra"  name="sifra" placeholder="Šifra" type="password" tabindex="6" required>
+      </fieldset>
+      <fieldset>
+        <button name="submit" type="submit" id="contact-submit" data-submit="...Sending">Dodaj</button>
+      </fieldset>
+    </form>
+  </div>

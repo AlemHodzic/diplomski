@@ -1,0 +1,42 @@
+<div class="student-container">
+    <div class="container">
+      <a class="button3" (click)="openDialog()">Dodaj predmet</a>
+      <div class="card shadow my-5">
+        <h4 class="card-header">Predmeti</h4>
+      
+        <div class="card-body">
+          <table class="table table-striped table-bordered table-hover table-responsive">
+            <thead>
+              <tr>
+                <th>UID</th>
+                <th>Otvoren</th>
+                <th>Zatvoren</th>
+                <th>Ucionica</th>
+                <th>Predmet</th>
+                <th data-sortable="false">Opcije</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let rok of rokovi">
+                <td>{{rok.rok_id}}</td>
+                <td>{{rok.datum_otvaranja}}</td>
+                <td>{{rok.datum_zatvaranja}}</td>
+                <td>{{rok.br_ucionice}}</td>
+                <td>{{rok.predmet}}</td>
+                <td>
+                  <div class="btn-group btn-group-sm" role="group">
+                    
+                    <button (click)="openEdit(rok.rok_id)" type="button" class="btn btn-outline-dark"><i class="fas fa-pen"></i></button>
+                    <button (click)="delete(rok)" type="button" class="btn btn-outline-dark"><i class="fas fa-trash"></i></button>
+                  </div>
+                </td>
+              </tr>
+            
+            </tbody>
+          </table>
+        </div>
+        <div class="card-footer"></div>
+      </div>
+    </div>
+  </div>
+  

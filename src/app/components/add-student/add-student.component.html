@@ -1,0 +1,36 @@
+<div class="container">  
+    <form id="contact" [formGroup] = "formdata" (ngSubmit)="onClickSubmit(formdata.value)">
+      <h3>Student forma</h3>
+      <h4>Unesite podatke studenta</h4>
+      <fieldset>
+        <input formControlName="ime" name="imeStudenta" placeholder="Ime" type="text" tabindex="1" required autofocus>
+      </fieldset>
+      <fieldset>
+        <input  formControlName="prezime"  name="prezimeStudenta" placeholder="Prezime" type="text" tabindex="2" required>
+      </fieldset>
+      <fieldset>
+        <input  formControlName="email"  name="mail" placeholder="E-mail" type="email" tabindex="3" required>
+      </fieldset>
+      <fieldset>
+        <input  formControlName="JMBG"  name="jmbg" placeholder="JMBG" type="number" tabindex="4" required>
+      </fieldset>
+      <fieldset>
+        <input  formControlName="student_indeks"  name="student_indeks" placeholder="Broj indeksa" type="number" tabindex="5" required>
+      </fieldset>
+      <fieldset>
+        <input  formControlName="sifra"  name="sifra" placeholder="Šifra" type="password" tabindex="6" required>
+      </fieldset>
+      <fieldset>
+        <h4>Odsjek:</h4>  
+        <label for="softversko">Softversko Inženjerstvo</label>
+        <input formControlName="odsjek_id" type="radio" id="softversko" name="odsjek_id" value="1"> <br>
+        <label for="proizvodni">Proizvodni Biznis</label>
+        <input formControlName="odsjek_id" type="radio" id="proizvodni" name="odsjek_id" value="2"><br>
+        <label for="gradevina">Građevinstvo</label>
+        <input formControlName="odsjek_id" type="radio" id="gradevina" name="odsjek_id" value="3"><br>
+      </fieldset>
+      <fieldset>
+        <button name="submit" type="submit" id="contact-submit" data-submit="...Sending">Dodaj</button>
+      </fieldset>
+    </form>
+  </div>
