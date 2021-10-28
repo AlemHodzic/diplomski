@@ -26,6 +26,7 @@ export class AddRokComponent implements OnInit {
     this.formdata = new FormGroup({
       datum_otvaranja: new FormControl(""),
       datum_zatvaranja:  new FormControl(""),
+      datum_ispita:  new FormControl(""),
       br_ucionice: new FormControl(""),
       predmet_id:  new FormControl("")
    });

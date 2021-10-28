@@ -18,7 +18,9 @@ export class RokComponent implements OnInit {
       res=> {
         this.rokovi = res as []
         this.rokovi = this.rokovi.filter(item => item.active == "yes");
+        console.log(this.rokovi)
         for(let i=0; i<this.rokovi.length; i++){
+          this.rokovi[i].datum_ispita = (moment(this.rokovi[i].datum_ispita)).format('DD MMM YYYY');
           this.rokovi[i].datum_otvaranja = (moment(this.rokovi[i].datum_otvaranja)).format('DD MMM YYYY');
           this.rokovi[i].datum_zatvaranja = (moment(this.rokovi[i].datum_zatvaranja)).format('DD MMM YYYY');
         }
