@@ -17,6 +17,21 @@ body {
   overflow-x: hidden;
 }
 
+.inner-container{
+  width: 100%;
+  height: auto;
+
+  display: flex;
+  justify-content:  flex-start;
+
+}
+.random-div{
+  margin-left: 150px;
+  height: 100vh;
+  width: 40%;
+  border-left: 1px solid black;
+}
+
 // Main Layout Grid
 
 .admin {

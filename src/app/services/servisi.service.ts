@@ -124,5 +124,35 @@ export class ServisiService {
   getRokovi(){
     return this.http.get(`${this.url}/getRokovi`)
   }
+  getRok(id){
+    return this.http.get(`${this.url}/getRok/${id}`);
+  }
+  addRok(object){
+    console.log(object)
+    this.http.post(`${this.url}/rok`, object).subscribe(
+      res => {
+        console.log(res);
+      }
+    );
+    window.location.reload();
+  }
+  updateRok(object){
+    this.http.put(`${this.url}/rok`, object).subscribe(
+      res=> {
+        console.log(res);
+      }
+    );
+    window.location.reload();
+  }
+  deleteRok(object){
+    console.log(object)
+    this.http.put(`${this.url}/archiveRok`, object).subscribe(
+      res=> {
+        console.log(res);
+      }
+    );
+    //window.location.reload();
+  }
+
 
 }

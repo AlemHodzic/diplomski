@@ -1,0 +1,27 @@
+<div class="container">  
+    <form id="contact" [formGroup] = "formdata" (ngSubmit)="onClickSubmit(formdata.value)">
+     <h3>Rok forma</h3>
+      <h4>Unesite informacije o roku</h4>
+      <fieldset>
+        <input formControlName="br_ucionice" name="imeStudenta" placeholder="Broj ucionice" type="number" tabindex="1" required autofocus>
+      </fieldset>
+      <fieldset>
+        <label for="start">Datum otvaranja</label>
+        <input type="date" id="start" name="start" formControlName="datum_otvaranja">     
+      </fieldset>
+      <fieldset>
+        <label for="end">Datum zatvaranja</label>
+        <input type="date" id="start" name="end" formControlName="datum_zatvaranja">     
+      </fieldset>
+      <fieldset>
+        <label for="predmeti">Predmet</label>
+        <select class="selectForm" name="predmeti" id="predmeti" formControlName="predmet_id" >
+          <option *ngFor="let predmet of predmeti"  value={{predmet.predmet_id}}>{{predmet.naziv}}</option>
+        </select>
+      </fieldset>
+  
+      <fieldset>
+        <button name="submit" type="submit" id="contact-submit" data-submit="...Sending">Ažuriraj</button>
+      </fieldset>
+    </form>
+  </div>

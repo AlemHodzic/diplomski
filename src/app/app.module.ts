@@ -17,7 +17,10 @@ import { PredmetiComponent } from './items/predmeti/predmeti.component';
 import { AddPredmetComponent } from './components/add-predmet/add-predmet.component';
 import { EditPredmetComponent } from './components/edit-predmet/edit-predmet.component';
 import { RokComponent } from './items/rok/rok.component';
-
+import { AddRokComponent } from './components/rok/add-rok/add-rok.component';
+import { EditRokComponent } from './components/rok/edit-rok/edit-rok.component';
+import {MatDatepickerModule} from '@angular/material/datepicker';
+import {MatFormFieldModule} from '@angular/material/form-field';
 
 @NgModule({
   declarations: [
@@ -32,7 +35,9 @@ import { RokComponent } from './items/rok/rok.component';
     PredmetiComponent,
     AddPredmetComponent,
     EditPredmetComponent,
-    RokComponent
+    RokComponent,
+    AddRokComponent,
+    EditRokComponent
   ],
   imports: [
     BrowserModule,
@@ -40,8 +45,10 @@ import { RokComponent } from './items/rok/rok.component';
     HttpClientModule,
     BrowserAnimationsModule,
     MatDialogModule,
+    MatDatepickerModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    MatFormFieldModule
   ],
   providers: [],
   bootstrap: [AppComponent]

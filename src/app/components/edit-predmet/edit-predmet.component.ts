@@ -58,6 +58,8 @@ export class EditPredmetComponent implements OnInit {
     data.godina_studija = +data.godina_studija
     data.odsjek_id = +data.odsjek_id
     data.profesor_id = +data.profesor_id
+    data.predmet_id = this.data.id;
+    console.log(data)
     this.service.updatePredmet(data);
   }
 
