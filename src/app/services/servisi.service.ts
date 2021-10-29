@@ -154,5 +154,34 @@ export class ServisiService {
     //window.location.reload();
   }
 
+  //LOGIN
+
+  loginUser(object){
+    return this.http.post(`${this.url}/login`, object)
+  }
+
+  getNovosti(){
+    return this.http.get(`${this.url}/novost`)
+  }
+  getNovost(id){
+    console.log(id)
+    return this.http.get(`${this.url}/novost/${id}`);
+  }
+  deleteNovost(object){
+    this.http.post(`${this.url}/deleteNovost`, object).subscribe(
+      res=> console.log(res)
+    )
+  }
+
+  addNovost(object){
+    this.http.post(`${this.url}/novost`, object).subscribe(
+      res => {
+        console.log(res);
+      }
+    );
+    window.location.reload();
+  }
+
+
 
 }

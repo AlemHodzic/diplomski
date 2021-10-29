@@ -1,0 +1,19 @@
+<a class="button3" (click)="openDialog()">Dodaj obavijest</a>
+<hr>
+  <div class="filtered-content">
+      <div class="news-container" *ngFor="let news of filteredNews">
+          <div class="img-container">
+              <img src="{{news.slika}}" alt="">
+          </div>
+          <div class="text-container">
+              <h4>{{news.podnaslov}}</h4>
+              <h2>{{news.naslov}}</h2>
+              <p>{{news.datum_kreiranja}}</p>
+          </div>
+          <div class="options-container">
+            <button (click)="delete(news)"  type="button" class="btn btn-outline-dark"><i class="fas fa-trash"></i></button>
+            <button (click)="openEdit(news.idnovosti)" type="button" class="btn btn-outline-dark"><i class="fas fa-pen"></i></button>
+        
+          </div>
+      </div>
+  </div>

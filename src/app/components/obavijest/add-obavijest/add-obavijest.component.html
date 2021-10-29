@@ -1,0 +1,21 @@
+<div class="container">  
+    <form id="contact" [formGroup] = "formdata" (ngSubmit)="onClickSubmit(formdata.value)">
+      <h3>Obavijest forma</h3>
+      <h4>Unesite novu obavijest</h4>
+      <fieldset>
+        <input formControlName="naslov" name="imeStudenta" placeholder="Naslov" type="text" tabindex="1" required autofocus>
+      </fieldset>
+      <fieldset>
+        <input  formControlName="podnaslov"  name="prezimeStudenta" placeholder="Podnaslov" type="text" tabindex="2" required>
+      </fieldset>
+      <fieldset>
+        <input  formControlName="slika"  name="prezimeStudenta" placeholder="Slika URL" type="text" tabindex="2" required>
+      </fieldset>
+      <fieldset>
+        <textarea  formControlName="sadrzaj"  name="mail" placeholder="Sadrzaj" type="textarea" tabindex="3" required></textarea>
+      </fieldset>
+      <fieldset>
+        <button name="submit" type="submit" id="contact-submit" data-submit="...Sending">Dodaj</button>
+      </fieldset>
+    </form>
+  </div>

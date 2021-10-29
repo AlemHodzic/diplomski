@@ -14,6 +14,7 @@ export class StudentiComponent implements OnInit {
   constructor(public service: ServisiService, public dialog: MatDialog) { }
   students: any;
   ngOnInit(): void {
+    console.log("aa")
     this.service.getStudents().subscribe(
       res=> {
         this.students = res as []

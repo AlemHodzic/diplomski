@@ -17,6 +17,21 @@ body {
   overflow-x: hidden;
 }
 
+.inner-container{
+  width: 100%;
+  height: auto;
+
+  display: flex;
+  justify-content:  flex-start;
+
+}
+.random-div{
+  margin-left: 150px;
+  height: 100vh;
+  width: 40%;
+  border-left: 1px solid black;
+}
+
 // Main Layout Grid
 
 .admin {
@@ -82,6 +97,8 @@ body {
 
 // Dashboard Overview Grid
 
+
+
 .dashboard {
   --column-count: 2;
 
@@ -91,7 +108,7 @@ body {
   margin: 0 calc(var(--spacing) * -0.5);
 
   // Grid
-  display: grid;
+
   grid-template-columns: repeat(var(--column-count), 1fr);
   grid-gap: var(--spacing);
 

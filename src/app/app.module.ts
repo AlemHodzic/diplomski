@@ -21,9 +21,15 @@ import { AddRokComponent } from './components/rok/add-rok/add-rok.component';
 import { EditRokComponent } from './components/rok/edit-rok/edit-rok.component';
 import {MatDatepickerModule} from '@angular/material/datepicker';
 import {MatFormFieldModule} from '@angular/material/form-field';
+import { LoginModule } from './shared/login/login.module';
+import { ObavijestiComponent } from './items/obavijesti/obavijesti.component';
+import { AddObavijestComponent } from './components/obavijest/add-obavijest/add-obavijest.component';
+import { EditObavijestComponent } from './components/obavijest/edit-obavijest/edit-obavijest.component';
+
 
 @NgModule({
   declarations: [
+
     AppComponent,
     DashboardComponent,
     StudentiComponent,
@@ -37,9 +43,14 @@ import {MatFormFieldModule} from '@angular/material/form-field';
     EditPredmetComponent,
     RokComponent,
     AddRokComponent,
-    EditRokComponent
+    EditRokComponent,
+    ObavijestiComponent,
+    AddObavijestComponent,
+    EditObavijestComponent,
+
   ],
-  imports: [
+  imports: [   
+    LoginModule,
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
