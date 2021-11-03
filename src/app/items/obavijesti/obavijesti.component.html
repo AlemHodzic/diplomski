@@ -1,9 +1,9 @@
-<a class="button3" (click)="openDialog()">Dodaj obavijest</a>
+<a class="button3"  *ngIf="admin || profesor" (click)="openDialog()">Dodaj obavijest</a>
 <hr>
   <div class="filtered-content">
       <div class="news-container" *ngFor="let news of filteredNews">
           <div class="img-container">
-              <img src="{{news.slika}}" alt="">
+              <img src="{{news.slika}}" alt="" [routerLink]="['/obavijest', news.idnovosti]">
           </div>
           <div class="text-container">
               <h4>{{news.podnaslov}}</h4>
@@ -11,8 +11,8 @@
               <p>{{news.datum_kreiranja}}</p>
           </div>
           <div class="options-container">
-            <button (click)="delete(news)"  type="button" class="btn btn-outline-dark"><i class="fas fa-trash"></i></button>
-            <button (click)="openEdit(news.idnovosti)" type="button" class="btn btn-outline-dark"><i class="fas fa-pen"></i></button>
+            <button *ngIf="admin || profesor" (click)="delete(news)"  type="button" class="btn btn-outline-dark"><i class="fas fa-trash"></i></button>
+            <button *ngIf="admin || profesor" (click)="openEdit(news.idnovosti)" type="button" class="btn btn-outline-dark"><i class="fas fa-pen"></i></button>
         
           </div>
       </div>

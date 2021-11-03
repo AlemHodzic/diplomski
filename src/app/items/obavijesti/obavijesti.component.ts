@@ -13,8 +13,21 @@ import { ServisiService } from 'src/app/services/servisi.service';
 export class ObavijestiComponent implements OnInit {
   filteredNews: any;
   constructor(public service: ServisiService, public dialog: MatDialog) { }
-
+  admin: boolean = false;
+  student: boolean = false;
+  profesor: boolean = false;
   ngOnInit(): void {
+    let personFromStorage = JSON.parse(localStorage.getItem('user'));
+    if(personFromStorage[0].rola == "admin"){
+      this.admin = true;
+    }
+    if(personFromStorage[0].rola == "student"){
+      this.student = true;
+    }
+    if(personFromStorage[0].rola == "profesor"){
+      this.profesor = true;
+    }
+
     this.service.getNovosti().subscribe(
       res=> {
         this.filteredNews = res as [];

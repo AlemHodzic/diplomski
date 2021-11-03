@@ -25,6 +25,13 @@ import { LoginModule } from './shared/login/login.module';
 import { ObavijestiComponent } from './items/obavijesti/obavijesti.component';
 import { AddObavijestComponent } from './components/obavijest/add-obavijest/add-obavijest.component';
 import { EditObavijestComponent } from './components/obavijest/edit-obavijest/edit-obavijest.component';
+import { AktuelnostiComponent } from './items/aktuelnosti/aktuelnosti.component';
+import { LandingComponent } from './items/landing/landing.component';
+import { SingleNovostComponent } from './items/single-novost/single-novost.component';
+import { PrijavljeniComponent } from './items/prijavljeni/prijavljeni.component';
+import { OcjeneComponent } from './items/ocjene/ocjene.component';
+import { AddOcjeneComponent } from './components/ocjene/add-ocjene/add-ocjene.component';
+import { EditOcjeneComponent } from './components/ocjene/edit-ocjene/edit-ocjene.component';
 
 
 @NgModule({
@@ -47,6 +54,13 @@ import { EditObavijestComponent } from './components/obavijest/edit-obavijest/ed
     ObavijestiComponent,
     AddObavijestComponent,
     EditObavijestComponent,
+    AktuelnostiComponent,
+    LandingComponent,
+    SingleNovostComponent,
+    PrijavljeniComponent,
+    OcjeneComponent,
+    AddOcjeneComponent,
+    EditOcjeneComponent,
 
   ],
   imports: [   

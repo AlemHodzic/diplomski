@@ -10,10 +10,22 @@ import { EditRokComponent } from 'src/app/components/rok/edit-rok/edit-rok.compo
   styleUrls: ['./rok.component.css']
 })
 export class RokComponent implements OnInit {
-
+  admin: boolean = false;
+  student: boolean = false;
+  profesor: boolean = false;
   constructor(public service: ServisiService, public dialog: MatDialog) { }
   rokovi: any;
   ngOnInit(): void {
+    let personFromStorage = JSON.parse(localStorage.getItem('user'));
+    if(personFromStorage[0].rola == "admin"){
+      this.admin = true;
+    }
+    if(personFromStorage[0].rola == "student"){
+      this.student = true;
+    }
+    if(personFromStorage[0].rola == "profesor"){
+      this.profesor = true;
+    }
     this.service.getRokovi().subscribe(
       res=> {
         this.rokovi = res as []
@@ -46,6 +58,26 @@ export class RokComponent implements OnInit {
         location.reload();
       }, 500);
     }
-  
+  }
+  object = {
+    student_indeks: 1,
+    rok_id: 1
+  }
+  student_indeks: any;
+  prijavi(rok){
+
+    let personFromStorage = JSON.parse(localStorage.getItem('user'));
+    console.log(personFromStorage)
+    this.service.fetchUser(personFromStorage[0].korisnik_id).subscribe(
+      res=> {
+        this.student_indeks = res[0].student_indeks;
+        this.object.rok_id = rok.rok_id
+        this.object.student_indeks = this.student_indeks
+        this.drugaFunkcija(this.object);
+      }
+    ) 
+  }
+  drugaFunkcija(object){
+    this.service.prijaviRok(object)
   }
 }

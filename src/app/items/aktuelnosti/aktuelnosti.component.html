@@ -1,0 +1,15 @@
+<h2>Aktuelni članci</h2>
+<a class="pogledajSve" routerLink="obavijesti">Pogledaj sve</a>
+<div class="inner-news-container">
+
+    <div class="news-box" *ngFor="let newsItem of news" (click)="openArticle(newsItem.idnovosti)">
+      <img src="{{newsItem.slika}}" alt="" >
+      <div class="inner-news-box">
+        <p class="newsSubTitle">{{newsItem.podnaslov}}</p>
+        <h3>{{newsItem.naslov}}</h3>
+        <p class="newsDate">{{newsItem.datum_kreiranja}}</p>
+      </div>
+    </div>
+    <hr>
+    
+</div>

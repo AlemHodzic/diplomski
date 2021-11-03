@@ -1,6 +1,6 @@
 <div class="student-container">
   <div class="container">
-    <a class="button3" (click)="openDialog()">Dodaj studenta</a>
+    <a class="button3" (click)="openDialog()"  *ngIf="admin">Dodaj studenta</a>
     <div class="card shadow my-5">
       <h4 class="card-header">Studenti</h4>
     
@@ -15,7 +15,7 @@
               <th>E-mail</th>
               <th>Odsjek</th>
               <th>Godina Studija</th>
-              <th data-sortable="false">Opcije</th>
+              <th  *ngIf="admin" data-sortable="false">Opcije</th>
             </tr>
           </thead>
           <tbody>
@@ -30,8 +30,8 @@
               <td>
                 <div class="btn-group btn-group-sm" role="group">
                   
-                  <button (click)="openEdit(student.student_indeks)" type="button" class="btn btn-outline-dark"><i class="fas fa-pen"></i></button>
-                  <button (click)="delete(student)" type="button" class="btn btn-outline-dark"><i class="fas fa-trash"></i></button>
+                  <button *ngIf="admin" (click)="openEdit(student.student_indeks)" type="button" class="btn btn-outline-dark"><i class="fas fa-pen"></i></button>
+                  <button  *ngIf="admin" (click)="delete(student)" type="button" class="btn btn-outline-dark"><i class="fas fa-trash"></i></button>
                 </div>
               </td>
             </tr>

@@ -22,6 +22,7 @@ export class AddObavijestComponent implements OnInit {
   onClickSubmit(data) {
     data.datum_kreiranja = new Date();
     data.datum_kreiranja = (moment(data.datum_kreiranja)).format('YYYY-MM-DD')
+    console.log(data);
     this.service.addNovost(data);
   }
 

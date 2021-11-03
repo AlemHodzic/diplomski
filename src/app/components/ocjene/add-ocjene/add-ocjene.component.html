@@ -1,0 +1,13 @@
+<div class="container">  
+    <form id="contact" [formGroup] = "formdata" (ngSubmit)="onClickSubmit(formdata.value)">
+      <h3>Ocjena</h3>
+      <h4>Unesite novu ocjenu za studenta sa indeksom {{data.id.student_indeks}}</h4>
+      <h4>Predmet: {{data.id.predmet}}</h4>
+      <fieldset>
+        <input min="5" max="10" formControlName="ocjena" name="imeStudenta" placeholder="Ocjena" type="number" tabindex="1" required autofocus>
+      </fieldset>
+      <fieldset>
+        <button name="submit" type="submit" id="contact-submit" data-submit="...Sending">Dodaj</button>
+      </fieldset>
+    </form>
+  </div>

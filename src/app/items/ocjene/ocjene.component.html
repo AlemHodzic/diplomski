@@ -1,0 +1,41 @@
+<div class="student-container">
+    <div class="container">
+      <div class="card shadow my-5">
+        <h4 class="card-header">Pregled svih ocjena/položenih ispita</h4>
+      
+        <div class="card-body">
+          <table class="table table-striped table-bordered table-hover table-responsive">
+            <thead>
+              <tr>
+                <th>Br. indeksa</th>
+                <th>Ime</th>
+                <th>Prezime</th>
+                <th>Datum ispita</th>
+                <th>Ocjena</th>
+                <th>Predmet</th>
+                <th *ngIf="admin || profesor" data-sortable="false">Opcije</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let item of ocjene">
+                <td>{{item.student_indeks}}</td>
+                <td>{{item.ime}}</td>
+                <td>{{item.prezime}}</td>
+                <td>{{item.datum_ispita}}</td>
+                <td>{{item.ocjena}}</td>
+                <td>{{item.naziv}}</td>
+                <td>
+                  <div *ngIf="admin || profesor" class="btn-group btn-group-sm" role="group">   
+                    <button (click)="openEdit(item.idocjena)" type="button" class="btn btn-outline-dark"><i class="fas fa-pen"></i></button>
+                  </div>
+                </td>
+              </tr>
+            
+            </tbody>
+          </table>
+        </div>
+        <div class="card-footer"></div>
+      </div>
+    </div>
+  </div>
+  
