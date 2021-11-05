@@ -9,7 +9,7 @@ export class ServisiService {
   constructor(private http: HttpClient) {
 
   }
-  url = 'http://localhost:5000';
+  url = 'https://studentska-sluzba-api.herokuapp.com';
 
   getStudents() {
     return this.http.get(`${this.url}/getStudents`)
