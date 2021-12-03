@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { AuthGuard } from './auth.guard';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { LandingComponent } from './items/landing/landing.component';
 import { ObavijestiComponent } from './items/obavijesti/obavijesti.component';
@@ -14,8 +15,8 @@ import { StudentiComponent } from './items/studenti/studenti.component';
 const routes: Routes = [
   { path: '', component: LandingComponent},
   { path: 'obavijest/:id', component: SingleNovostComponent},
-  { path: 'studenti', component: StudentiComponent},
-  { path: 'profesori', component: ProfesorComponent},
+  { path: 'studenti', component: StudentiComponent, canActivate: [AuthGuard]},
+  { path: 'profesori', component: ProfesorComponent, canActivate: [AuthGuard]},
   { path: 'predmeti', component: PredmetiComponent},
   { path: 'rokovi', component: RokComponent},
   { path: 'obavijesti', component: ObavijestiComponent},

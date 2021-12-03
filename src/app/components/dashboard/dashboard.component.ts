@@ -48,7 +48,7 @@ export class DashboardComponent implements OnInit {
                 var d = future.diff(start, 'days'); 
                 if(d < 4 && d > 0){
                   this.notifObject.predmet = this.rokovi[i].predmet
-                  this.notifObject.dani = d
+                  this.notifObject.dani = d+1;
                   this.notifikacije.push(this.notifObject)
                 }
               }

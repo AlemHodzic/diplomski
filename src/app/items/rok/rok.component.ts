@@ -65,9 +65,9 @@ export class RokComponent implements OnInit {
   }
   student_indeks: any;
   prijavi(rok){
-
+   
     let personFromStorage = JSON.parse(localStorage.getItem('user'));
-    console.log(personFromStorage)
+    console.log("a", personFromStorage)
     this.service.fetchUser(personFromStorage[0].korisnik_id).subscribe(
       res=> {
         this.student_indeks = res[0].student_indeks;
